@@ -162,7 +162,7 @@ export default {
         },
         slides: 3,
         userAccount: "",
-        linkAccount: "https://exp-affiliate.web.app/dashbord/",
+        linkAccount: "https://luca24hr.ga/dashbord/",
         linkAffiliate: "",
         selected: [],
     }),

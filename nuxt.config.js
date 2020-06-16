@@ -68,7 +68,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   server: {
-    port: 4024, 
+    port: 4025, 
     host: "159.89.204.52" 
   },
   axios: {
