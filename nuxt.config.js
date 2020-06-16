@@ -1,4 +1,4 @@
-
+require("dotenv").config();
 export default {
   mode: 'spa',
   /*
@@ -68,8 +68,8 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   server: {
-    port: 4024, // default: 3000
-    host: process.env.HOST || "localhost" // default: 3000
+    port: 4024, 
+    host: "159.89.204.52" 
   },
   axios: {
   },
