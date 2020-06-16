@@ -67,6 +67,10 @@ export default {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
+  server: {
+    port: 4024, // default: 3000
+    host: process.env.HOST || "localhost" // default: 3000
+  },
   axios: {
   },
   /*
