@@ -136,13 +136,17 @@ export default {
             meta: [{
                     hid: 'og:image',
                     property: 'og:image',
-                    content: this.selected.ogImage
+                    content: "https://i.imgur.com/MOyJCey.jpg"
                 },
                 {
                     hid: "og:description",
                     name: "og:description",
                     content: this.selected.desc
-                }
+                },
+                {   hid: "og:type",
+                    property: 'og:type',
+                    content: 'website'
+                },
             ],
             link: [{
                 rel: "icon",
