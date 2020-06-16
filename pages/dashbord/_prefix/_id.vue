@@ -35,7 +35,7 @@
         </div>
 
         <div class="col-12">
-            <ShareNetwork network="line" url="" :title="selected.title" :description="selected.desc">
+            <ShareNetwork network="line" :url="this.linkAccount" :title="selected.title" :description="selected.desc">
                 <b-button variant="light">
                     <i class="fab fa-line" style="font-size:30px; color:#00c300"></i>
                 </b-button>
