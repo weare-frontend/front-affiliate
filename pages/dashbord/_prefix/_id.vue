@@ -12,7 +12,7 @@
         </slide>
     </carousel-3d>
     <div class="row">
-        <div class="col" style="padding-bottom: 10px;">
+        <div class="col-md-8 offset-md-2 col-sm-12" style="padding-bottom: 10px;">
             <b-input-group size="md">
                 <b-input-group-prepend is-text>
                     <i class="fas fa-link"></i>
@@ -22,36 +22,39 @@
                     <b-button @click="copySomething(linkAccount)" variant="success"><i class="fas fa-clone"></i></b-button>
                 </b-input-group-append>
             </b-input-group>
-
         </div>
     </div>
     <br>
     <div class="row">
-        <div class="col-12">
-            <b-button v-b-modal.modal-center variant="success" size="lg"><i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ</b-button>
+        <div class="col-md-8 offset-md-2 col-sm-12" v-if="selected.lineShare">
+            <b-button @click="getUrl" variant="success" block size="lg"><i class="fab fa-line"></i> สมัครสมาชิก</b-button><br><br>
+        </div>
+        <div class="col-12" v-else>
+            <b-button v-b-modal.modal-center variant="success" size="lg"><i class="fas fa-sign-in-alt"></i> สมัครสมาชิก</b-button>
             <b-button @click="getUrl" variant="success" size="lg"><i class="fas fa-user"></i> สมัครสมาชิก</b-button><br><br>
         </div>
+
         <div class="col-12">
-            <ShareNetwork network="line" :url="this.linkAccount" :title="selected.title"  :quote="selected.desc" hashtags="affiliateEXP">
+            <ShareNetwork network="line" url="" :title="selected.title" :description="selected.desc">
                 <b-button variant="light">
                     <i class="fab fa-line" style="font-size:30px; color:#00c300"></i>
                 </b-button>
             </ShareNetwork>
-            <ShareNetwork network="facebook" :url="this.linkAccount" :title="selected.title"  :quote="selected.desc" hashtags="affiliateEXP">
+            <ShareNetwork network="facebook" :url="this.linkAccount" :title="selected.title" :quote="selected.desc">
                 <b-button variant="light">
                     <i class="fab fa-facebook" style="font-size:30px; color:#3b5999"></i>
                 </b-button>
             </ShareNetwork>
-            <ShareNetwork network="facebook" :url="this.linkAccount" :title="selected.title"  :quote="selected.desc" hashtags="affiliateEXP">
+            <ShareNetwork network="twitter" :url="this.linkAccount" :title="selected.title">
                 <b-button variant="light">
                     <i class="fab fa-twitter" style="font-size:30px; color:#55acee"></i>
                 </b-button>
             </ShareNetwork>
-            <ShareNetwork network="skype" :url="this.linkAccount" :title="selected.title"  :quote="selected.desc" hashtags="affiliateEXP">
+            <!-- <ShareNetwork network="skype" :url="this.linkAccount" :title="selected.title" :description="selected.desc">
                 <b-button variant="light">
                     <i class="fab fa-skype" style="font-size:30px; color:#00AFF0"></i>
                 </b-button>
-            </ShareNetwork>
+            </ShareNetwork> -->
         </div>
     </div>
 
@@ -85,7 +88,8 @@ export default {
                 prefix: "asia",
                 site: "https://m.lucabetasia.com",
                 icon: "logo.png",
-                title:"lucabetasia",
+                ogImage: "img-1.jpg",
+                title: "lucabetasia",
                 desc: "ชวนเพื่อนมาเล่น lucabetasia กันเถอะ",
                 img: [
                     "img-1.png",
@@ -97,7 +101,8 @@ export default {
                 prefix: "happy555",
                 site: "https://m.happy555th.com",
                 icon: "logo.png",
-                title:"happy555th",
+                ogImage: "img-1.jpg",
+                title: "happy555th",
                 desc: "ชวนเพื่อนมาเล่น happy555th กันเถอะ",
                 img: [
                     "img-1.jpg",
@@ -105,16 +110,19 @@ export default {
                     "img-3.jpg"
                 ]
             },
-              {
+            {
                 prefix: "lucabet24hr",
                 site: "https://lucabet24hr.com",
+                lineShare: "https://lucabet24hr.com/dashboard/login?friendshipid=",
                 icon: "logo.png",
-                 title:"lucabet24hr",
-                desc: "ชวนเพื่อนมาเล่น lucabet24hr กันเถอะ",
+                ogImage: "img-1.jpg",
+                title: "LUCABET24HR",
+                desc: `สมาชิกสมัครใหม่\nแจกฟรี 100 บาท\nถอนเงินสดได้ 2,000 บาท\n\nคาสิโนออนไลน์ รวบรวมไว้ทุกค่าย บอล หวย สล็อต\nครบในเว็บเดียว\n\n-ทุกยอดเดิมพัน รับคอม 0.3%\n-ระบบแนะนำเพื่อน รับคอม 0.6%\n-สมัครสมาชิก ฝากครั้งแรก โบนัส 50% \n\nSA Gaming/Sexy Gaming/Pretty Gaming/ DG Gaming`,
                 img: [
                     "img-1.jpg",
                     "img-2.jpg",
-                    "img-3.jpg"
+                    "img-3.jpg",
+                    // "img-4.jpg"
                 ]
             }
         ]
@@ -128,14 +136,19 @@ export default {
             meta: [{
                     hid: 'og:image',
                     property: 'og:image',
-                    content: require(`@/static/img/${this.selected.prefix}/${this.selected.icon}`)
+                    content: require(`@/static/img/${this.selected.prefix}/${this.selected.ogImage}`)
                 },
                 {
                     hid: "og:description",
                     name: "og:description",
                     content: this.selected.desc
                 }
-            ]
+            ],
+            link: [{
+                rel: "icon",
+                type: "image/x-icon",
+                href: require(`@/static/img/${this.selected.prefix}/${this.selected.icon}`)
+            }]
         }
     },
     data: () => ({
@@ -146,14 +159,17 @@ export default {
         slides: 3,
         userAccount: "",
         linkAccount: "https://exp-affiliate.web.app/dashbord/",
+        linkAffiliate: "",
         selected: [],
     }),
     async mounted() {
         this.userAccount = this.$route.params.id || ""
-        if (this.userAccount.trim()) {
-            this.linkAccount = this.linkAccount + this.userAccount
+        if (this.userAccount && this.selected) {
+            if (this.selected.lineShare) {
+                this.linkAffiliate = this.selected.lineShare + this.userAccount
+            }
+            this.linkAccount = `${this.linkAccount}${this.selected.prefix}/${this.userAccount}`
         }
-        // this.selected = await this.findData('asia')
     },
     components: {
         Logo,
@@ -161,17 +177,15 @@ export default {
     },
     methods: {
         login() {
-            let url = this.selected.site + `/check-login?username=${this.params.username}&password=${this.params.password}`;
+            let url = `${this.selected.site}/check-login?username=${this.params.username}&password=${this.params.password}`;
             window.open(url, '_blank');
         },
         getUrl() {
             let url = this.selected.site + "/register/";
             if (this.selected) {
                 url += this.userAccount
-                // window.location.href = this.selected.site+this.userAccount
             } else {
                 url
-                // window.location.href = this.selected.site
             }
             window.open(url, '_blank');
         },
