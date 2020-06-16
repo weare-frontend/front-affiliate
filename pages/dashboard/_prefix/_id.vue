@@ -173,6 +173,10 @@ export default {
                 this.linkAffiliate = this.selected.lineShare + this.userAccount
             }
             this.linkAccount = `${this.linkAccount}${this.selected.prefix}/${this.userAccount}`
+        }else if(this.selected){
+            this.linkAccount = `${this.linkAccount}${this.selected.prefix}`
+        }else{
+            alert("no prefix")
         }
     },
     components: {
