@@ -162,7 +162,7 @@ export default {
         },
         slides: 3,
         userAccount: "",
-        linkAccount: "https://nuxtv10-982d0.web.app/dashbord/",
+        linkAccount: "https://nuxtv10-982d0.web.app/dashboard/",
         linkAffiliate: "",
         selected: [],
     }),
