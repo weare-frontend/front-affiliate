@@ -16,13 +16,11 @@ export default {
         content: 'https://i.imgur.com/MOyJCey.jpg'
       },
       {
-        hid: 'twitter:image',
         property: 'twitter:image',
         content: 'https://i.imgur.com/MOyJCey.jpg'
       },
      ,
      {
-      hid: 'twitter:title',
       property: 'twitter:title',
       content: 'lucabet24hr'
     }
