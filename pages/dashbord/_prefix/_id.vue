@@ -136,7 +136,7 @@ export default {
             meta: [{
                     hid: 'og:image',
                     property: 'og:image',
-                    content: "https://i.imgur.com/MOyJCey.jpg"
+                    content: this.selected.ogImage
                 },
                 {
                     hid: "og:description",
