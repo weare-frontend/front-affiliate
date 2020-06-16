@@ -1,6 +1,6 @@
 require("dotenv").config();
 export default {
-  // mode: 'spa',
+  mode: 'spa',
   /*
   ** Headers of the page
   */
