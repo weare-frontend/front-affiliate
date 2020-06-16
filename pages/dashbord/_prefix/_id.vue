@@ -28,33 +28,49 @@
     <br>
     <div class="row">
         <div class="col-12">
-            <b-button variant="success" size="lg"><i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ</b-button>
+            <b-button v-b-modal.modal-center variant="success" size="lg"><i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ</b-button>
             <b-button @click="getUrl" variant="success" size="lg"><i class="fas fa-user"></i> สมัครสมาชิก</b-button><br><br>
         </div>
         <div class="col-12">
-            <ShareNetwork network="line" url="https://news.vuejs.org/issues/180" title="Say hi to Vite! A brand new, extremely fast development setup for Vue." description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You." quote="The hot reload is so fast it\'s near instant. - Evan You" hashtags="vuejs,vite">
+            <ShareNetwork network="line" :url="this.linkAccount" :title="selected.title"  :quote="selected.desc" hashtags="affiliateEXP">
                 <b-button variant="light">
                     <i class="fab fa-line" style="font-size:30px; color:#00c300"></i>
                 </b-button>
             </ShareNetwork>
-            <ShareNetwork network="facebook" url="https://news.vuejs.org/issues/180" title="Say hi to Vite! A brand new, extremely fast development setup for Vue." description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You." quote="The hot reload is so fast it\'s near instant. - Evan You" hashtags="vuejs,vite">
+            <ShareNetwork network="facebook" :url="this.linkAccount" :title="selected.title"  :quote="selected.desc" hashtags="affiliateEXP">
                 <b-button variant="light">
                     <i class="fab fa-facebook" style="font-size:30px; color:#3b5999"></i>
                 </b-button>
             </ShareNetwork>
-            <ShareNetwork network="facebook" url="https://news.vuejs.org/issues/180" title="Say hi to Vite! A brand new, extremely fast development setup for Vue." description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You." quote="The hot reload is so fast it\'s near instant. - Evan You" hashtags="vuejs,vite">
+            <ShareNetwork network="facebook" :url="this.linkAccount" :title="selected.title"  :quote="selected.desc" hashtags="affiliateEXP">
                 <b-button variant="light">
                     <i class="fab fa-twitter" style="font-size:30px; color:#55acee"></i>
                 </b-button>
             </ShareNetwork>
-            <ShareNetwork network="skype" url="https://news.vuejs.org/issues/180" title="Say hi to Vite! A brand new, extremely fast development setup for Vue." description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You." quote="The hot reload is so fast it\'s near instant. - Evan You" hashtags="vuejs,vite">
+            <ShareNetwork network="skype" :url="this.linkAccount" :title="selected.title"  :quote="selected.desc" hashtags="affiliateEXP">
                 <b-button variant="light">
                     <i class="fab fa-skype" style="font-size:30px; color:#00AFF0"></i>
                 </b-button>
             </ShareNetwork>
         </div>
-
     </div>
+
+    <b-modal id="modal-center" centered title="LOGIN" hide-footer :header-bg-variant="'success'" :header-text-variant="'white'">
+        <b-input-group size="md">
+            <b-input-group-prepend is-text>
+                <i class="fas fa-user"></i>
+            </b-input-group-prepend>
+            <b-form-input v-model="params.username" placeholder="USERNAME/ เบอร์โทร"></b-form-input>
+        </b-input-group> <br>
+        <b-input-group size="md">
+            <b-input-group-prepend is-text>
+                <i class="fas fa-key"></i>
+            </b-input-group-prepend>
+            <b-form-input v-model="params.password" placeholder="PIN CODE"></b-form-input>
+        </b-input-group>
+        <br>
+        <b-button block @click="login()">LOGIN</b-button>
+    </b-modal>
 
 </div>
 </template>
@@ -69,6 +85,7 @@ export default {
                 prefix: "asia",
                 site: "https://m.lucabetasia.com",
                 icon: "logo.png",
+                desc: "ชวนเพื่อนมาเล่น lucabetasia กันเถอะ",
                 img: [
                     "img-1.png",
                     "img-2.png",
@@ -79,6 +96,7 @@ export default {
                 prefix: "happy555",
                 site: "https://m.happy555th.com",
                 icon: "logo.png",
+                desc: "ชวนเพื่อนมาเล่น happy555th กันเถอะ",
                 img: [
                     "img-1.jpg",
                     "img-2.jpg",
@@ -91,10 +109,29 @@ export default {
             selected: item || []
         }
     },
+    head() {
+        return {
+            meta: [{
+                    hid: 'og:image',
+                    property: 'og:image',
+                    content: `@/static/img/${this.selected.prefix}/${this.selected.icon}`
+                },
+                {
+                    hid: "og:description",
+                    name: "og:description",
+                    content: this.selected.desc
+                }
+            ]
+        }
+    },
     data: () => ({
+        params: {
+            username: "",
+            password: ""
+        },
         slides: 3,
         userAccount: "",
-        linkAccount: "http://localhost:3000/dashbord/",
+        linkAccount: "https://exp-affiliate.web.app/dashbord/",
         selected: [],
     }),
     async mounted() {
@@ -109,6 +146,10 @@ export default {
         Snowf
     },
     methods: {
+        login() {
+            let url = this.selected.site + `/check-login?username=${this.params.username}&password=${this.params.password}`;
+            window.open(url, '_blank');
+        },
         getUrl() {
             let url = this.selected.site + "/register/";
             if (this.selected) {
