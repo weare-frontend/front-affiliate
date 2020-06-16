@@ -102,6 +102,17 @@ export default {
                     "img-2.jpg",
                     "img-3.jpg"
                 ]
+            },
+              {
+                prefix: "lucabet24hr",
+                site: "https://lucabet24hr.com",
+                icon: "logo.png",
+                desc: "ชวนเพื่อนมาเล่น lucabet24hr กันเถอะ",
+                img: [
+                    "img-1.jpg",
+                    "img-2.jpg",
+                    "img-3.jpg"
+                ]
             }
         ]
         var item = await dataArray.find(_x => _x.prefix == $route.params.prefix);
