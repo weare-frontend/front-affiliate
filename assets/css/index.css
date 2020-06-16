@@ -1,0 +1,29 @@
+
+body {
+    /* background-image: url(https://ocean99th.com/wp-content/uploads/2020/03/Mobile-TOP.png);
+    background-position: top center;
+
+    background-attachment: fixed; */
+    /* margin-top: -10px; */
+    background-color: #000000;
+    background-attachment: fixed;
+    background-size: 153%;
+    background-repeat: no-repeat;
+    min-height: 100%;
+    height: auto;
+    overflow-y: auto;
+    font-family: 'Kanit', sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: max(12px, env(safe-area-inset-left));
+    padding-right: max(12px, env(safe-area-inset-right));
+    padding-top: max(12px, env(safe-area-inset-top));
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
