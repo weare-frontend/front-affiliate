@@ -85,6 +85,7 @@ export default {
                 prefix: "asia",
                 site: "https://m.lucabetasia.com",
                 icon: "logo.png",
+                title:"lucabetasia",
                 desc: "ชวนเพื่อนมาเล่น lucabetasia กันเถอะ",
                 img: [
                     "img-1.png",
@@ -96,6 +97,7 @@ export default {
                 prefix: "happy555",
                 site: "https://m.happy555th.com",
                 icon: "logo.png",
+                title:"happy555th",
                 desc: "ชวนเพื่อนมาเล่น happy555th กันเถอะ",
                 img: [
                     "img-1.jpg",
@@ -107,6 +109,7 @@ export default {
                 prefix: "lucabet24hr",
                 site: "https://lucabet24hr.com",
                 icon: "logo.png",
+                 title:"lucabet24hr",
                 desc: "ชวนเพื่อนมาเล่น lucabet24hr กันเถอะ",
                 img: [
                     "img-1.jpg",
@@ -125,7 +128,7 @@ export default {
             meta: [{
                     hid: 'og:image',
                     property: 'og:image',
-                    content: `@/static/img/${this.selected.prefix}/${this.selected.icon}`
+                    content: require(`@/static/img/${this.selected.prefix}/${this.selected.icon}`)
                 },
                 {
                     hid: "og:description",
