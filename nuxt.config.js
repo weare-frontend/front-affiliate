@@ -14,6 +14,17 @@ export default {
         hid: 'og:image',
         property: 'og:image',
         content: 'https://i.imgur.com/MOyJCey.jpg'
+      },
+      {
+        hid: 'twitter:image',
+        property: 'twitter:image',
+        content: 'https://i.imgur.com/MOyJCey.jpg'
+      },
+     ,
+     {
+      hid: 'twitter:title',
+      property: 'twitter:title',
+      content: 'lucabet24hr'
     }
     ],
     link: [
@@ -73,8 +84,8 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   server: {
-    port: 4025, 
-    host: "159.89.204.52" 
+    port: 4025,
+    host: "159.89.204.52"
   },
   axios: {
   },
