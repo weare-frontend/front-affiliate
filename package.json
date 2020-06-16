@@ -2,7 +2,7 @@
   "name": "affiliate",
   "version": "1.0.0",
   "description": "สมาชิกสมัครใหม่",
-  "og:image":"https://i.imgur.com/MOyJCey.jpg",
+  "image":"https://i.imgur.com/MOyJCey.jpg",
   "author": "exp",
   "private": true,
   "scripts": {
