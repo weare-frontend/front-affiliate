@@ -7,7 +7,6 @@
         <slide v-for="(slide, i) in selected.img" :index="i" :key="i">
             <figure>
                 <img :src="require(`@/static/img/${selected.prefix}/${slide}`)">
-                <!-- <img src="https://wplucabetasia.b-cdn.net/wp-content/uploads/2020/03/affliate.jpg"> -->
             </figure>
         </slide>
     </carousel-3d>
@@ -27,13 +26,12 @@
     <br>
     <div class="row">
         <div class="col-md-8 offset-md-2 col-sm-12" v-if="selected.lineShare">
-            <b-button @click="getUrl" variant="success" block size="lg"><i class="fab fa-line"></i> สมัครสมาชิก</b-button><br><br>
+            <b-button @click="loginLine" variant="success" block size="lg"><i class="fab fa-line"></i> สมัครสมาชิกผ่านไลน์</b-button><br><br>
         </div>
         <div class="col-12" v-else>
-            <b-button v-b-modal.modal-center variant="success" size="lg"><i class="fas fa-sign-in-alt"></i> สมัครสมาชิก</b-button>
-            <b-button @click="getUrl" variant="success" size="lg"><i class="fas fa-user"></i> สมัครสมาชิก</b-button><br><br>
+            <b-button v-b-modal.modal-center variant="success" ><i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ</b-button>
+            <b-button @click="getUrl" variant="success" ><i class="fas fa-user"></i> สมัครสมาชิก</b-button><br><br>
         </div>
-
         <div class="col-12">
             <ShareNetwork network="line" :url="this.linkAccount" :title="selected.title" :description="selected.desc">
                 <b-button variant="light">
@@ -50,14 +48,8 @@
                     <i class="fab fa-twitter" style="font-size:30px; color:#55acee"></i>
                 </b-button>
             </ShareNetwork>
-            <!-- <ShareNetwork network="skype" :url="this.linkAccount" :title="selected.title" :description="selected.desc">
-                <b-button variant="light">
-                    <i class="fab fa-skype" style="font-size:30px; color:#00AFF0"></i>
-                </b-button>
-            </ShareNetwork> -->
         </div>
     </div>
-
     <b-modal id="modal-center" centered title="LOGIN" hide-footer :header-bg-variant="'success'" :header-text-variant="'white'">
         <b-input-group size="md">
             <b-input-group-prepend is-text>
@@ -74,7 +66,6 @@
         <br>
         <b-button block @click="login()">LOGIN</b-button>
     </b-modal>
-
 </div>
 </template>
 
@@ -122,7 +113,6 @@ export default {
                     "img-1.jpg",
                     "img-2.jpg",
                     "img-3.jpg",
-                    // "img-4.jpg"
                 ]
             }
         ]
@@ -143,7 +133,8 @@ export default {
                     name: "og:description",
                     content: this.selected.desc
                 },
-                {   hid: "og:type",
+                {
+                    hid: "og:type",
                     property: 'og:type',
                     content: 'website'
                 },
@@ -168,14 +159,20 @@ export default {
     }),
     async mounted() {
         this.userAccount = this.$route.params.id || ""
-        if (this.userAccount && this.selected) {
-            if (this.selected.lineShare) {
+        if (this.selected) {
+            // link line
+            if (this.selected.lineShare && this.userAccount) {
                 this.linkAffiliate = this.selected.lineShare + this.userAccount
+            } else {
+                this.linkAffiliate = ''
             }
-            this.linkAccount = `${this.linkAccount}${this.selected.prefix}/${this.userAccount}`
-        }else if(this.selected){
-            this.linkAccount = `${this.linkAccount}${this.selected.prefix}`
-        }else{
+            // link account
+            if (this.userAccount) {
+                this.linkAccount = `${this.linkAccount}${this.selected.prefix}/${this.userAccount}`
+            } else {
+                this.linkAccount = `${this.linkAccount}${this.selected.prefix}`
+            }
+        } else {
             alert("no prefix")
         }
     },
@@ -184,6 +181,10 @@ export default {
         Snowf
     },
     methods: {
+        loginLine() {
+            let url = `${this.linkAffiliate}`;
+            window.open(url, '_blank');
+        },
         login() {
             let url = `${this.selected.site}/check-login?username=${this.params.username}&password=${this.params.password}`;
             window.open(url, '_blank');

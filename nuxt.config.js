@@ -5,15 +5,20 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: process.env.TITLE || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
+      { hid: 'description', name: 'description', content: process.env.DESC || '' },
       {
         hid: 'og:image',
         property: 'og:image',
         content: 'https://i.imgur.com/MOyJCey.jpg'
+      },
+      {
+        hid: "og:description",
+        name: "og:description",
+        content: process.env.DESC || '' 
       },
       {
         hid: 'twitter:image',
@@ -33,7 +38,7 @@ export default {
 
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: 'https://i.imgur.com/ux14tYR.png' },
+      // { rel: 'icon', type: 'image/x-icon', href: 'https://i.imgur.com/ux14tYR.png' },
       {
         rel: "stylesheet",
         href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css",
@@ -89,8 +94,8 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   server: {
-    port: 4025,
-    host: "159.89.204.52"
+    port: process.env.PORT || 4002,
+    host: process.env.HOST || "localhost"
   },
   axios: {
   },

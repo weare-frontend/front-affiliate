@@ -92,3 +92,4 @@ firebase.json
 .firebase
 .functions
 .firebaserc
+.firebase/
