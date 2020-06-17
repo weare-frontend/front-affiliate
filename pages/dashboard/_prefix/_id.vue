@@ -108,7 +108,7 @@ export default {
                 icon: "logo.png",
                 ogImage: "https://login.lucabet24hr.com/backend/web/special_promotions/879c0a318b6f8613ad93d719d298ac1a.jpg",
                 title: "LUCABET24HR",
-                desc: `สมาชิกสมัครใหม่\nแจกฟรี 100 บาท\nถอนเงินสดได้ 2,000 บาท\n\nคาสิโนออนไลน์ รวบรวมไว้ทุกค่าย บอล หวย สล็อต\nครบในเว็บเดียว\n\n-ทุกยอดเดิมพัน รับคอม 0.3%\n-ระบบแนะนำเพื่อน รับคอม 0.6%\n-สมัครสมาชิก ฝากครั้งแรก โบนัส 50% \n\nSA Gaming/Sexy Gaming/Pretty Gaming/ DG Gaming`,
+                desc: `\nสมาชิกสมัครใหม่\nแจกฟรี 100 บาท\nถอนเงินสดได้ 2,000 บาท\n\nคาสิโนออนไลน์\nบอล หวย สล็อต\n'มีไว้ ครบ จบ ในเว็บเดียว'\n\n\nSA Gaming/Sexy Gaming/Pretty Gaming/ DG Gaming`,
                 img: [
                     "img-1.jpg",
                     "img-2.png",
