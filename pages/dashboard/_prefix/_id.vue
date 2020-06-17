@@ -2,8 +2,8 @@
 <div class="container">
     <Snowf :amount="50" :size="5" :speed="0.5" :wind="0" :opacity="0.8" :swing="1" :image="null" :zIndex="null" :resize="true" color="#fff" />
     <br>
-    <b-img style="max-width: 230px;" :src="require(`@/static/img/${selected.prefix}/${selected.icon}`)" fluid alt="Fluid image"></b-img>
-    <carousel-3d :autoplay='true' :controls-visible="true" :clickable="true" :width="400" :height="400">
+    <b-img style="max-width: 230px; max-height: 150px;" :src="require(`@/static/img/${selected.prefix}/${selected.icon}`)" fluid alt="Fluid image"></b-img>
+    <carousel-3d :display="3" :autoplayTimeout="5000" :autoplay='true' :controls-visible="true" :clickable="true" :width="400" :height="400">
         <slide v-for="(slide, i) in selected.img" :index="i" :key="i">
             <figure>
                 <img :src="require(`@/static/img/${selected.prefix}/${slide}`)">
@@ -18,38 +18,38 @@
                 </b-input-group-prepend>
                 <b-form-input disabled v-model="linkAccount"></b-form-input>
                 <b-input-group-append>
-                    <b-button @click="copySomething(linkAccount)" variant="success"><i class="fas fa-clone"></i></b-button>
+                    <b-button @click="copySomething(linkAccount)" >คัดลอก</b-button>
                 </b-input-group-append>
             </b-input-group>
         </div>
     </div>
-    <br>
     <div class="row">
         <div class="col-md-8 offset-md-2 col-sm-12" v-if="selected.lineShare">
-            <b-button @click="loginLine" variant="success" block size="lg"><i class="fab fa-line"></i> สมัครสมาชิกผ่านไลน์</b-button><br><br>
+            <b-button @click="loginLine" variant="success" block size="lg"><i style="font-size:20px; " class="fab fa-line"></i> สมัครสมาชิกผ่านไลน์</b-button><br>
         </div>
-        <div class="col-12" v-else>
-            <b-button v-b-modal.modal-center variant="success" ><i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ</b-button>
-            <b-button @click="getUrl" variant="success" ><i class="fas fa-user"></i> สมัครสมาชิก</b-button><br><br>
+        <div class="col-md-8 offset-md-2 col-sm-12" v-else>
+            <!-- <b-button v-b-modal.modal-center variant="success" ><i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ</b-button> -->
+            <b-button @click="getUrl" variant="success" block size="lg" ><i class="fas fa-user"></i> สมัครสมาชิก</b-button><br>
         </div>
         <div class="col-12">
             <ShareNetwork network="line" :url="this.linkAccount" :title="selected.title" :description="selected.desc">
                 <b-button variant="light">
-                    <i class="fab fa-line" style="font-size:30px; color:#00c300"></i>
+                    <i class="fab fa-line" style="font-size:38px; color:#00c300"></i>
                 </b-button>
             </ShareNetwork>
             <ShareNetwork network="facebook" :url="this.linkAccount" :title="selected.title" :quote="selected.desc">
                 <b-button variant="light">
-                    <i class="fab fa-facebook" style="font-size:30px; color:#3b5999"></i>
+                    <i class="fab fa-facebook" style="font-size:38px; color:#3b5999"></i>
                 </b-button>
             </ShareNetwork>
             <ShareNetwork network="twitter" :url="this.linkAccount" :title="selected.title">
                 <b-button variant="light">
-                    <i class="fab fa-twitter" style="font-size:30px; color:#55acee"></i>
+                    <i class="fab fa-twitter" style="font-size:38px; color:#55acee"></i>
                 </b-button>
             </ShareNetwork>
         </div>
     </div>
+    <br>
     <b-modal id="modal-center" centered title="LOGIN" hide-footer :header-bg-variant="'success'" :header-text-variant="'white'">
         <b-input-group size="md">
             <b-input-group-prepend is-text>
@@ -111,8 +111,9 @@ export default {
                 desc: `สมาชิกสมัครใหม่\nแจกฟรี 100 บาท\nถอนเงินสดได้ 2,000 บาท\n\nคาสิโนออนไลน์ รวบรวมไว้ทุกค่าย บอล หวย สล็อต\nครบในเว็บเดียว\n\n-ทุกยอดเดิมพัน รับคอม 0.3%\n-ระบบแนะนำเพื่อน รับคอม 0.6%\n-สมัครสมาชิก ฝากครั้งแรก โบนัส 50% \n\nSA Gaming/Sexy Gaming/Pretty Gaming/ DG Gaming`,
                 img: [
                     "img-1.jpg",
-                    "img-2.jpg",
+                    "img-2.png",
                     "img-3.jpg",
+                    "img-4.jpg",
                 ]
             }
         ]
@@ -164,7 +165,7 @@ export default {
             if (this.selected.lineShare && this.userAccount) {
                 this.linkAffiliate = this.selected.lineShare + this.userAccount
             } else {
-                this.linkAffiliate = ''
+                this.linkAffiliate = this.selected.site + "/register/"
             }
             // link account
             if (this.userAccount) {

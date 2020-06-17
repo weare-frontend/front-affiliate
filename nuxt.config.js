@@ -21,19 +21,16 @@ export default {
         content: process.env.DESC || '' 
       },
       {
-        hid: 'twitter:image',
-        property: 'og:image',
+        name:'twitter:image',
         content: 'https://i.imgur.com/MOyJCey.jpg'
       },
       {
-        hid: 'twitter:title',
-        property: 'og:title',
+        name:'twitter:title',
         content: 'lucabet24hr'
       },
       {
-        hid: 'twitter:description',
-        property: 'og:description',
-        content: 'lucabet24hr'
+        name:"twitter:description",
+        content: '\nสมาชิกสมัครใหม่\nแจกฟรี 100 บาท\nถอนเงินสดได้ 2,000 บาท\n\nคาสิโนออนไลน์ รวบรวมไว้ทุกค่าย บอล หวย สล็อต\nครบในเว็บเดียว\n\n-ทุกยอดเดิมพัน รับคอม 0.3%\n-ระบบแนะนำเพื่อน รับคอม 0.6%\n-สมัครสมาชิก ฝากครั้งแรก โบนัส 50% \n\nSA Gaming/Sexy Gaming/Pretty Gaming/ DG Gaming'
       },
 
     ],
