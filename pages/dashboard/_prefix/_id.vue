@@ -117,6 +117,9 @@ export default {
                     "img-2.png",
                     "img-3.jpg",
                     "img-4.jpg",
+                    "img-5.png",
+                    "img-6.jpg",
+                    "img-7.jpg",
                 ]
             }
         ]
