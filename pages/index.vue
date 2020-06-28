@@ -1,7 +1,7 @@
 <template>
   <div class="center">
     <br>
-    <h1 class="text-white ">AFFILIATE SHARING | 2020</h1>
+    <h1 class="text-white ">Affiliate Sharing | 2020</h1>
   </div>
 </template>
 

@@ -18,24 +18,32 @@ export default {
       {
         hid: "og:description",
         name: "og:description",
-        content: process.env.DESC || '' 
+        content: process.env.DESC || ''
       },
       {
-        name:'twitter:image',
+        name: 'twitter:image',
         content: 'https://i.imgur.com/MOyJCey.jpg'
       },
       {
-        name:'twitter:title',
-        content: 'lucabet24hr'
+        name: 'twitter:title',
+        content: 'scrgame888'
       },
       {
-        name:"twitter:description",
-        content: '\nคาสิโนออนไลน์\nบอล หวย สล็อต\n"มีไว้ ครบ จบ ในเว็บเดียว"\n\n\n-ทุกยอดเดิมพัน รับคอม 0.3%\n-ระบบแนะนำเพื่อน รับคอม 0.6%\n-สมัครสมาชิก ฝากครั้งแรก โบนัส 50%\n\nSA Gaming/Sexy Gaming/Pretty Gaming/ DG Gaming',
+        name: "twitter:description",
+        content: process.env.DESC || ''
       },
 
     ],
     link: [
-      // { rel: 'icon', type: 'image/x-icon', href: 'https://i.imgur.com/ux14tYR.png' },
+      { rel:"icon", type: 'image/x-icon', href:'https://login.lavagame888.com/backend/api/get-setting/image?id=2' },
+      // { rel: 'icon', type: 'image/x-icon', href: `@/static/img/favicon.png` },
+
+      {
+        rel: "icon",
+        type: "image/x-icon",
+        href: `@/static/img/favicon.png`
+      },
+
       {
         rel: "stylesheet",
         href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css",
