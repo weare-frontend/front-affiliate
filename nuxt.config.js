@@ -13,7 +13,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://i.imgur.com/MOyJCey.jpg'
+        content: 'https://imgur.com/ICsiH1H.jpg'
       },
       {
         hid: "og:description",
@@ -22,11 +22,11 @@ export default {
       },
       {
         name: 'twitter:image',
-        content: 'https://i.imgur.com/MOyJCey.jpg'
+        content: 'https://imgur.com/ICsiH1H.jpg'
       },
       {
         name: 'twitter:title',
-        content: 'scrgame888'
+        content: 'lavagame888'
       },
       {
         name: "twitter:description",
