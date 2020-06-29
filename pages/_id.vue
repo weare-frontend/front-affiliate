@@ -98,6 +98,15 @@ import Logo from "~/components/Logo.vue";
 import Snowf from "vue-snowf";
 
 export default {
+  head() {
+    return {
+        link: [{
+            rel: "icon",
+            type: "image/x-icon",
+            href: require(`@/static/img/${this.selected.icon}`)
+        }]
+    }
+  },
   async asyncData($route) {
     var item = {
       website: process.env.WEBSITE,

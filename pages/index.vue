@@ -1,7 +1,7 @@
 <template>
   <div class="center">
     <br>
-    <h1 class="text-white ">{{TITLE}} | AFFILIATE</h1>
+    <h3 class="text-white ">{{TITLE}} | AFFILIATE</h3>
   </div>
 </template>
 

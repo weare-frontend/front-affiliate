@@ -35,15 +35,7 @@ export default {
 
     ],
     link: [
-      { rel:"icon", type: 'image/x-icon', href:'https://login.lavagame888.com/backend/api/get-setting/image?id=2' },
-      // { rel: 'icon', type: 'image/x-icon', href: `@/static/img/favicon.png` },
-
-      {
-        rel: "icon",
-        type: "image/x-icon",
-        href: `@/static/img/favicon.png`
-      },
-
+      { rel: 'icon', type: 'image/x-icon', href: '@/static/img/favicon.png' },
       {
         rel: "stylesheet",
         href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css",
