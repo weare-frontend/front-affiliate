@@ -1,7 +1,7 @@
 <template>
   <div class="center">
     <br>
-    <h1 class="text-white ">AFFILIATE SHARING | 2020</h1>
+    <h1 class="text-white ">{{TITLE}} | AFFILIATE</h1>
   </div>
 </template>
 
@@ -11,7 +11,10 @@ import Logo from '~/components/Logo.vue'
 export default {
   components: {
     Logo
-  }
+  },
+    data: () => ({
+    TITLE: process.env.TITLE,
+  }),
 }
 </script>
 

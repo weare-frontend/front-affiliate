@@ -37,6 +37,11 @@ export default {
     link: [
       // { rel: 'icon', type: 'image/x-icon', href: 'https://i.imgur.com/ux14tYR.png' },
       {
+        rel: "icon",
+        type: "image/x-icon",
+        href: `@/static/img/favicon.png`
+      },
+      {
         rel: "stylesheet",
         href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css",
         integrity: "sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/",
