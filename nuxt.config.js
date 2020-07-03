@@ -13,29 +13,29 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://i.imgur.com/MOyJCey.jpg'
+        content: 'https://imgur.com/ICsiH1H.jpg'
       },
       {
         hid: "og:description",
         name: "og:description",
-        content: process.env.DESC || '' 
+        content: process.env.DESC || ''
       },
       {
-        name:'twitter:image',
-        content: 'https://i.imgur.com/MOyJCey.jpg'
+        name: 'twitter:image',
+        content: 'https://imgur.com/ICsiH1H.jpg'
       },
       {
-        name:'twitter:title',
-        content: 'lucabet24hr'
+        name: 'twitter:title',
+        content: 'lavagame888'
       },
       {
-        name:"twitter:description",
-        content: '\nคาสิโนออนไลน์\nบอล หวย สล็อต\n"มีไว้ ครบ จบ ในเว็บเดียว"\n\n\n-ทุกยอดเดิมพัน รับคอม 0.3%\n-ระบบแนะนำเพื่อน รับคอม 0.6%\n-สมัครสมาชิก ฝากครั้งแรก โบนัส 50%\n\nSA Gaming/Sexy Gaming/Pretty Gaming/ DG Gaming',
+        name: "twitter:description",
+        content: process.env.DESC || ''
       },
 
     ],
     link: [
-      // { rel: 'icon', type: 'image/x-icon', href: 'https://i.imgur.com/ux14tYR.png' },
+      { rel: 'icon', type: 'image/x-icon', href: '@/static/img/favicon.png' },
       {
         rel: "icon",
         type: "image/x-icon",
