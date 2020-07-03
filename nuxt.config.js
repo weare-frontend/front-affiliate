@@ -5,42 +5,37 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.TITLE || '',
+    title: process.env.OG_TITLE || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.DESC || '' },
+      { hid: 'description', name: 'description', content: process.env.OG_DESC || '' },
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://imgur.com/ICsiH1H.jpg'
+        content: process.env.OG_IMG || ''
       },
       {
         hid: "og:description",
         name: "og:description",
-        content: process.env.DESC || ''
+        content: process.env.OG_DESC || ''
       },
       {
         name: 'twitter:image',
-        content: 'https://imgur.com/ICsiH1H.jpg'
+        content: process.env.OG_IMG || ''
       },
       {
         name: 'twitter:title',
-        content: 'lavagame888'
+        content: process.env.OG_TITLE || ''
       },
       {
         name: "twitter:description",
-        content: process.env.DESC || ''
+        content: process.env.OG_DESC || ''
       },
 
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '@/static/img/favicon.png' },
-      {
-        rel: "icon",
-        type: "image/x-icon",
-        href: `@/static/img/favicon.png`
-      },
+      { rel: 'icon', type: 'image/x-icon', href: '@/static/img/'+process.env.DIR_IMG+'/favicon.png' },
       {
         rel: "stylesheet",
         href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css",
