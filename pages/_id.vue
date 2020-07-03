@@ -3,7 +3,7 @@
     <Snowf :amount="50" :size="5" :speed="0.5" :wind="0" :opacity="0.8" :swing="1" :image="null" :zIndex="null" :resize="true" color="#fff" />
     <br />
     <b-img style="max-width: 230px; max-height: 150px;" :src="require(`@/static/img/${selected.dirImg}${selected.icon}`)" fluid alt="Fluid image"></b-img>
-    <carousel-3d :display="3" :autoplayTimeout="5000" :autoplay="true" :controls-visible="true" :clickable="true" :width="400" :height="400">
+    <carousel-3d :display="3" :autoplayTimeout="5000" :autoplay="true" :controls-visible="false" :clickable="true" :width="400" :height="400">
         <slide v-for="(slide, i) in selected.img" :index="i" :key="i">
             <figure>
                 <img :src="require(`@/static/img/${selected.dirImg}${slide}`)" />
