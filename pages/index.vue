@@ -1,24 +1,37 @@
 <template>
 <div class="center">
-    <b-img style="cursor: pointer;" @click="getUrl()" :src="require(`@/static/img/${this.dirImg}/favicon.png`)" fluid alt="logo"></b-img>
+    <b-img style="cursor: pointer; max-width: 300px;" @click="getUrl()" :src="require(`@/static/img/${this.selected.dirImg}/favicon.png`)" fluid alt="logo"></b-img>
 </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
 export default {
-    components: {
-        Logo
+    head() {
+        return {
+            link: [{
+                rel: "icon",
+                type: "image/x-icon",
+                href: require(`@/static/img/${this.selected.dirImg}/favicon.png`)
+            }]
+        }
     },
+    async asyncData($route) {
+        var item = {
+            dirImg: process.env.DIR_IMG || "",
+            website: process.env.WEBSITE || "",
+        };
+
+        return {
+            selected: item || {}
+        };
+    },
+    components: {},
     data: () => ({
-        TITLE: process.env.OG_TITLE,
-        dirImg: process.env.DIR_IMG || "",
-        website: process.env.WEBSITE || "",
+        selected: []
     }),
     methods: {
         getUrl() {
-            let url = this.website + "/register/";
+            let url = this.selected.website + "/register/";
             window.open(url, "_blank");
         },
     }
