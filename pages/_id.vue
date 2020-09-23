@@ -11,20 +11,7 @@
         </slide>
     </carousel-3d>
     <div class="row">
-        <div class="col-md-8 offset-md-2 col-sm-12" style="padding-bottom: 10px;">
-            <b-input-group size="md">
-                <b-input-group-prepend is-text>
-                    <i class="fas fa-link"></i>
-                </b-input-group-prepend>
-                <b-form-input disabled v-model="linkAccount"></b-form-input>
-                <b-input-group-append>
-                    <b-button @click="copySomething(linkAccount)">คัดลอก</b-button>
-                </b-input-group-append>
-            </b-input-group>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8 offset-md-2 col-sm-12" v-if="selected.lineShare">
+      <div class="col-md-8 offset-md-2 col-sm-12" v-if="selected.lineShare">
             <b-button @click="loginLine" variant="success" block size="lg">
                 <i style="font-size:20px; " class="fab fa-line"></i> สมัครสมาชิกผ่านไลน์
             </b-button>
@@ -36,6 +23,19 @@
             </b-button>
             <br />
         </div>
+        <div class="col-md-8 offset-md-2 col-sm-12" >
+            <b-input-group size="md" style="padding-bottom: 15px;">
+                <b-input-group-prepend is-text>
+                    <i class="fas fa-link"></i>
+                </b-input-group-prepend>
+                <b-form-input disabled v-model="linkAccount"></b-form-input>
+                <b-input-group-append>
+                    <b-button @click="copySomething(linkAccount)">คัดลอก</b-button>
+                </b-input-group-append>
+            </b-input-group>
+        </div>
+    </div>
+    <div class="row">      
         <div class="col-12">
             <ShareNetwork network="line" :url="this.linkAccount" :title="selected.title" :description="selected.desc">
                 <b-button variant="light">
@@ -171,5 +171,8 @@ export default {
 
 .links {
     padding-top: 15px;
+}
+.net{
+  padding-bottom: 10px;
 }
 </style>
