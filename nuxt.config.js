@@ -9,7 +9,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'เว็บอันดับ 1 บริการฝาก-ถอน อัตโนมัติที่ไม่ต้องรอ โอนไว ฝากปุ๊บเล่นปั๊บ' },
+      { hid: 'description', name: 'description', content: 'ยิ่งชวนเยอะ ยิ่งได้เยอะ เติมเร็ว ถอนไว' },
       {
         hid: 'og:image',
         property: 'og:image',
@@ -18,7 +18,7 @@ export default {
       {
         hid: "og:description",
         name: "og:description",
-        content: 'เว็บอันดับ 1 บริการฝาก-ถอน อัตโนมัติที่ไม่ต้องรอ โอนไว ฝากปุ๊บเล่นปั๊บ'
+        content: 'ยิ่งชวนเยอะ ยิ่งได้เยอะ เติมเร็ว ถอนไว'
       },
       {
         name: 'twitter:image',
@@ -30,7 +30,7 @@ export default {
       },
       {
         name: "twitter:description",
-        content: 'เว็บอันดับ 1 บริการฝาก-ถอน อัตโนมัติที่ไม่ต้องรอ โอนไว ฝากปุ๊บเล่นปั๊บ'
+        content: 'ยิ่งชวนเยอะ ยิ่งได้เยอะ เติมเร็ว ถอนไว'
       },
 
     ],
