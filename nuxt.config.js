@@ -65,6 +65,10 @@ export default {
     src: "~/plugins/carousel3d.js",
     ssr: false
   },
+  {
+    src: '~plugins/fb-sdk.js',
+    ssr: false,
+  }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -80,12 +84,20 @@ export default {
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
+    ['@nuxtjs/axios', { proxy: true }],
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     'vue-social-sharing/nuxt',
     'nuxt-clipboard2',
+    '@nuxtjs/toast',
   ],
+  axios: {},
+  proxy: {
+    '/api/': {
+      target: process.env.API + 'backend/',
+      pathRewrite: { '^/api': 'api' },
+    },
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
@@ -95,6 +107,29 @@ export default {
     host: process.env.HOST || "localhost"
   },
   axios: {
+  },
+  toast: {
+    position: 'top-center',
+    className: 'justify-content-start',
+    register: [
+      // Register custom toasts
+      {
+        name: 'error',
+        message: (option) => option.message,
+        options: {
+          type: 'error',
+          duration: 2000,
+        },
+      },
+      {
+        name: 'success',
+        message: (option) => option.message,
+        options: {
+          type: 'success',
+          duration: 2000,
+        },
+      },
+    ],
   },
   /*
   ** Build configuration
