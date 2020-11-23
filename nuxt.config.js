@@ -1,4 +1,6 @@
-// require("dotenv").config();
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 export default {
   mode: "spa",
   /*
@@ -12,50 +14,50 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: "ยิ่งชวนเยอะ ยิ่งได้เยอะ เติมเร็ว ถอนไว"
+        content: "ยิ่งชวนเยอะ ยิ่งได้เยอะ เติมเร็ว ถอนไว",
       },
       {
         hid: "og:image",
         property: "og:image",
-        content: process.env.OG_IMG || ""
+        content: process.env.OG_IMG || "",
       },
       {
         hid: "og:description",
         name: "og:description",
-        content: "ยิ่งชวนเยอะ ยิ่งได้เยอะ เติมเร็ว ถอนไว"
+        content: "ยิ่งชวนเยอะ ยิ่งได้เยอะ เติมเร็ว ถอนไว",
       },
       {
         name: "twitter:image",
-        content: process.env.OG_IMG || ""
+        content: process.env.OG_IMG || "",
       },
       {
         name: "twitter:title",
-        content: process.env.OG_TITLE || ""
+        content: process.env.OG_TITLE || "",
       },
       {
         name: "twitter:description",
-        content: "ยิ่งชวนเยอะ ยิ่งได้เยอะ เติมเร็ว ถอนไว"
-      }
+        content: "ยิ่งชวนเยอะ ยิ่งได้เยอะ เติมเร็ว ถอนไว",
+      },
     ],
     link: [
       {
         rel: "icon",
         type: "image/x-icon",
-        href: "@/static/img/" + process.env.DIR_IMG + "/favicon.png"
+        href: "@/static/img/" + process.env.DIR_IMG + "/favicon.png",
       },
       {
         rel: "stylesheet",
         href: "https://use.fontawesome.com/releases/v5.6.3/css/all.css",
         integrity:
           "sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/",
-        crossorigin: "anonymous"
+        crossorigin: "anonymous",
       },
       {
         rel: "stylesheet",
         href:
-          "https://fonts.googleapis.com/css?family=Kanit:300,400,500,600,700"
-      }
-    ]
+          "https://fonts.googleapis.com/css?family=Kanit:300,400,500,600,700",
+      },
+    ],
   },
   /*
    ** Customize the progress-bar color
@@ -71,8 +73,8 @@ export default {
   plugins: [
     {
       src: "~/plugins/carousel3d.js",
-      ssr: false
-    }
+      ssr: false,
+    },
   ],
   /*
    ** Nuxt.js dev-modules
@@ -92,7 +94,7 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     "@nuxtjs/dotenv",
     "vue-social-sharing/nuxt",
-    "nuxt-clipboard2"
+    "nuxt-clipboard2",
   ],
   /*
    ** Axios module configuration
@@ -100,7 +102,7 @@ export default {
    */
   server: {
     port: process.env.PORT || 4002,
-    host: process.env.HOST || "localhost"
+    host: process.env.HOST || "localhost",
   },
   axios: {},
   /*
@@ -111,6 +113,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
-  }
+    extend(config, ctx) {},
+  },
 };
