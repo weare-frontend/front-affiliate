@@ -100,7 +100,7 @@ export default {
    */
   server: {
     port: process.env.PORT || 4002,
-    host: process.env.HOST || "localhost"
+    host: process.env.HOST || "0.0.0.0"
   },
   axios: {},
   /*
